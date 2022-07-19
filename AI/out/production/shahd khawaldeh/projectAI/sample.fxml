@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.media.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane blendMode="MULTIPLY" focusTraversable="true" nodeOrientation="RIGHT_TO_LEFT" prefHeight="700.0" prefWidth="946.0" style="-fx-background-color: #b0cbe1; -fx-background-size: 12; -fx-border-width: 12;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projectAI.Controller">
+   <children>
+      <ComboBox fx:id="source" layoutX="20" layoutY="110" nodeOrientation="LEFT_TO_RIGHT" prefHeight="35" prefWidth="200" promptText="Starting point ">
+         <effect>
+            <Glow level="0.0" />
+         </effect></ComboBox>
+      <ComboBox fx:id="destination" layoutX="20" layoutY="150" nodeOrientation="LEFT_TO_RIGHT" prefHeight="35" prefWidth="200" promptText="Goal point ">
+         <effect>
+            <Glow level="0.0" />
+         </effect></ComboBox>
+      <ComboBox fx:id="algorithm" layoutX="20" layoutY="190" nodeOrientation="LEFT_TO_RIGHT" prefHeight="35" prefWidth="200" promptText="Select algorithms " />
+
+      <Button fx:id="btngo" layoutX="119.0" layoutY="232.0" mnemonicParsing="false" onAction="#pathAlgorithmRequested" prefHeight="38.0" prefWidth="104.0" text="start">
+         <font>
+            <Font name="Agency FB Bold" size="20" />
+         </font></Button>
+      <Button layoutX="18.0" layoutY="232.0" mnemonicParsing="false" onAction="#clear" prefHeight="38.0" prefWidth="97.0" text="again">
+         <font>
+            <Font name="System Bold Italic" size="16" />
+         </font></Button>
+
+      <TextArea fx:id="Pathfinal" editable="false" layoutX="20" layoutY="300" prefHeight="100" prefWidth="200" />
+      <Label contentDisplay="RIGHT" layoutX="159.0" layoutY="270.0" prefHeight="42.0" prefWidth="175.0" text="Path">
+         <font>
+            <Font name="Bodoni MT Black" size="20" />
+         </font>
+      </Label>
+      <TextArea fx:id="space" editable="false" layoutX="20" layoutY="410" nodeOrientation="LEFT_TO_RIGHT" prefHeight="35" prefWidth="200" promptText="Space complexity " />
+      <TextArea fx:id="time" editable="false" layoutX="20" layoutY="450" nodeOrientation="LEFT_TO_RIGHT" prefHeight="35" prefWidth="200" promptText="time  complexity" />
+      <Button layoutX="60" layoutY="500" mnemonicParsing="false" onAction="#exit" prefHeight="35" prefWidth="110" text="End" />
+      <AnchorPane fx:id="map" layoutX="243.0" layoutY="26.0" prefHeight="546.0" prefWidth="312.0">
+         <children>
+            <ImageView fitHeight="565.0" fitWidth="312.0" layoutX="15.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Screenshot_2.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="156.0" layoutY="218.0" text="salfit" />
+            <Label layoutX="125.0" layoutY="35.0" text="rasAlnakora" />
+            <Label layoutX="132.0" layoutY="329.0" text="Dora" />
+            <Label layoutX="111.0" layoutY="476.0" text="alnakb" />
+            <Label layoutX="87.0" layoutY="126.0" text="qaesarea" />
+            <Label layoutX="155.0" layoutY="354.0" text="alfoar" />
+            <Label layoutX="182.0" layoutY="135.0" text="altyba">
+               <font>
+                  <Font size="9.0" />
+               </font>
+            </Label>
+            <Label layoutX="167.0" layoutY="175.0" text="qabatia">
+               <font>
+                  <Font size="8.0" />
+               </font>
+            </Label>
+            <Label layoutX="125.0" layoutY="283.0" text="betonia">
+               <font>
+                  <Font size="8.0" />
+               </font>
+            </Label>
+            <MediaView fitHeight="200.0" fitWidth="200.0" layoutX="67.0" layoutY="148.0" />
+         </children>
+      </AnchorPane>
+      <MediaView fitHeight="200.0" fitWidth="200.0" layoutX="134.0" layoutY="-150.0" />
+      <MediaView fitHeight="200.0" fitWidth="200.0" layoutX="-66.0" layoutY="-163.0" />
+      <Label layoutX="598.0" layoutY="173.0" prefHeight="200.0" prefWidth="270.0" text="Search " textAlignment="CENTER">
+         <font>
+            <Font name="Cooper Black" size="43.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="0.36190476190476195" endY="1.0" startX="0.38095238095238093" startY="0.7904761904761904">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.8421052694320679" green="0.4249512553215027" blue="0.6126705408096313" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <Label layoutX="599.0" layoutY="291.0" prefHeight="82.0" prefWidth="240.0" text="Algorithm">
+         <font>
+            <Font name="Cooper Black" size="36.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="0.9761904761904762" startX="0.5809523809523809" startY="0.8285714285714285">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.8421052694320679" green="0.4249512553215027" blue="0.6126705408096313" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <ImageView fitHeight="62.0" fitWidth="84.0" layoutX="714.0" layoutY="201.0" opacity="0.29" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images.jpg" />
+         </image>
+      </ImageView>
+   </children>
+   <effect>
+      <Bloom threshold="1.0" />
+   </effect>
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
+   <cursor>
+      <Cursor fx:constant="HAND" />
+   </cursor>
+</AnchorPane>
